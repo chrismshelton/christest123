@@ -25,6 +25,11 @@ jobs:
         with:
           fetch-depth: 100
 
+      # Set up ssh-agent to push to pantheon
+      - uses: webfactory/ssh-agent@v0.5.2
+        with:
+          ssh-private-key: ${{ secrets.DEPLOYMENT_KEY }}
+
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
