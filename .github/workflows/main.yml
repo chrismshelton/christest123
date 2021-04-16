@@ -40,3 +40,4 @@ jobs:
           CURRENT_BRANCH: ${{ github.ref }}
         run: |
           echo "$CURRENT_BRANCH"
+          git push pantheon
