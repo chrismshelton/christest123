@@ -31,8 +31,8 @@ jobs:
           ssh-private-key: ${{ secrets.DEPLOYMENT_KEY }}
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Add pantheon git remote
+        run: git remote add pantheon ssh://codeserver.dev.18326fa2-af98-4055-89ad-ccfa41cb679a@codeserver.dev.18326fa2-af98-4055-89ad-ccfa41cb679a.drush.in:2222/~/repository.git
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
