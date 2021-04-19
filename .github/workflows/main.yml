@@ -40,7 +40,9 @@ jobs:
           CURRENT_BRANCH: ${{ github.ref }}
         run: |
           echo "$CURRENT_BRANCH"
-          ls -l ~/.ssh/known_hosts
+          ls -l ~/.ssh/
+          echo "KEYSCAN"
+          ssh-keyscan -H codeserver.dev.18326fa2-af98-4055-89ad-ccfa41cb679a.drush.in
           ssh-keyscan -H codeserver.dev.18326fa2-af98-4055-89ad-ccfa41cb679a.drush.in >> ~/.ssh/known_hosts
           ls -l ~/.ssh/known_hosts
           git push pantheon
