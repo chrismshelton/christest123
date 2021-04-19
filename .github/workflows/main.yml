@@ -42,11 +42,11 @@ jobs:
           echo "$CURRENT_BRANCH"
           ls -l ~/.ssh/
           echo "KEYSCAN"
-          ssh-keyscan -H codeserver.dev.18326fa2-af98-4055-89ad-ccfa41cb679a.drush.in
+          ssh-keyscan -H codeserver.dev.18326fa2-af98-4055-89ad-ccfa41cb679a.drush.in -p 2222
           echo "KNOWN HOSTS"
           readlink -f ~/.ssh/known_hosts
+          ssh-keyscan -H codeserver.dev.18326fa2-af98-4055-89ad-ccfa41cb679a.drush.in -p 2222 >> ~/.ssh/known_hosts
           echo "SSH VERBOSE"
           ssh -vvv codeserver.dev.18326fa2-af98-4055-89ad-ccfa41cb679a@codeserver.dev.18326fa2-af98-4055-89ad-ccfa41cb679a.drush.in -p 2222
-          ssh-keyscan -H codeserver.dev.18326fa2-af98-4055-89ad-ccfa41cb679a.drush.in >> ~/.ssh/known_hosts
           cat ~/.ssh/known_hosts
           git push pantheon
